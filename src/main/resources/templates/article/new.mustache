@@ -1,0 +1,14 @@
+
+{{>layout/header}}
+<form class="container" action="/article/create" method="post">
+    <div class="mb-3">
+        <input class="form-control" name="title" type="text">
+    </div>
+    <div class="mb-3">
+        <textarea class="form-control" name="content" rows="3"></textarea>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">제출</button>
+</form>
+{{>layout/footer}}
