@@ -4,16 +4,17 @@ import com.example.firstproject.entity.Article
 import lombok.AllArgsConstructor
 import lombok.ToString
 
+
 @AllArgsConstructor
 @ToString
-class ArticleForm (val title: String, val content: String){
+class ArticleForm ( val id :Long, val title: String, val content: String){
 
     fun toEntity():Article{
-        return Article(null,title,content)
+        return Article(id,title,content)
     }
 
     override fun toString(): String {
-        return "ArticleForm(title='$title', content='$content')"
+        return "ArticleForm(id=$id, title='$title', content='$content')"
     }
 
 

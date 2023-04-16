@@ -1,17 +1,15 @@
 package com.example.firstproject.entity
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Id
+import jakarta.persistence.*
 import lombok.AllArgsConstructor
 import lombok.NoArgsConstructor
+
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 class Article(
-    @Id @GeneratedValue var id: Long ?=null,
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private var id: Long,
     @Column var title: String,
     @Column var content: String
 ) {
@@ -24,6 +22,17 @@ class Article(
 
     override fun toString(): String {
         return "Article(id=$id, title='$title', content='$content')"
+    }
+
+    fun getId():Long{
+        return id
+    }
+
+    fun patch(artice: Article) {
+        if (artice.title != null)
+            this.title = artice.title
+        if (artice.content != null)
+            this.content = artice.content
     }
 
 
